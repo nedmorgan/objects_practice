@@ -45,6 +45,14 @@ let calculator = {
     this.value = this.memory / a
     console.log(this.value)
   },
+  exp: function (a) {
+    this.value = Math.exp(a)
+    console.log(this.value)
+  },
+  power: function (a, b) {
+    this.value = Math.pow(a, b)
+    console.log(this.value)
+  },
   clear: function () {
     this.value = 0
   }
