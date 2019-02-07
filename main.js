@@ -28,7 +28,6 @@
 
 let calculator = {
   value: 0,
-  memory: 8,
   add: function (a, b) {
     this.value = a + b
     console.log(this.value)
@@ -38,16 +37,34 @@ let calculator = {
     console.log(this.value)
   },
   multiply: function (a) {
-    this.value = this.memory * a
-    console.log(this.value)
+    if (this.value <= 0) {
+      this.value = 1
+      this.value *= a
+      console.log(this.value)
+    } else {
+      this.value = this.value * a
+      console.log(this.value)
+    }
   },
   divide: function (a) {
-    this.value = this.memory / a
-    console.log(this.value)
+    if (this.value <= 0) {
+      this.value = 1
+      this.value /= a
+      console.log(this.value)
+    } else {
+      this.value = this.value / a
+      console.log(this.value)
+    }
   },
   exp: function (a) {
-    this.value = Math.exp(a)
-    console.log(this.value)
+    if (this.value <= 0) {
+      this.value = 1
+      this.value = Math.exp(a)
+      console.log(this.value)
+    } else {
+      this.value = Math.exp(a)
+      console.log(this.value)
+    }
   },
   power: function (a, b) {
     this.value = Math.pow(a, b)
